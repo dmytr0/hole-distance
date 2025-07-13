@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="utf-8">
+    <title>Розрахунок відстані між центрами</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #c9e4e8; margin: 0; padding: 20px; }
+        .container { max-width: 400px; margin: auto; background: #fffdeb; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        input { width: calc(100% - 22px); padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .distance .holeSize { font-size: 1.2em; margin-top: 10px; text-align: center; }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container">
+    <h2>Розрахунок відстані між центрами</h2>
+    <input type="number" id="val1" placeholder="Введіть перше значення">
+    <input type="number" id="val2" placeholder="Введіть друге значення">
+    <div class="distance" id="distance"></div>
+    <div class="holeSize" id="holeSize"></div>
+    <button id="reset">Reset</button>
+</div>
+<script>
+    function calculate() {
+        var val1 = document.getElementById('val1').value;
+        var val2 = document.getElementById('val2').value;
+
+        if(val1 === '' || val2 === ''){
+            document.getElementById('distance').innerHTML = '';
+            document.getElementById('holeSize').innerHTML = '';
+            return;
+        }
+
+        try {
+            var a = Math.abs(parseFloat(val1));
+            var b = Math.abs(parseFloat(val2));
+
+            if(isNaN(a) || isNaN(b)) {
+                document.getElementById('distance').innerHTML = '';
+                document.getElementById('holeSize').innerHTML = '';
+                return;
+            }
+
+            var mn = Math.min(a, b);
+            var mx = Math.max(a, b);
+            var holeSize = (mx - mn) / 2;
+            var distance = holeSize + mn;
+
+            document.getElementById('distance').innerHTML = 'Відстань між центрами: ' + distance;
+            document.getElementById('holeSize').innerHTML = 'Діметр отвору: ' + holeSize;
+        } catch(err) {
+            document.getElementById('distance').innerHTML = '';
+            document.getElementById('holeSize').innerHTML = '';
+        }
+    }
+
+    document.getElementById('val1').addEventListener('input', calculate);
+    document.getElementById('val2').addEventListener('input', calculate);
+
+    document.getElementById('reset').addEventListener('click', function() {
+        document.getElementById('val1').value = '';
+        document.getElementById('val2').value = '';
+        document.getElementById('distance').innerHTML = '';
+        document.getElementById('holeSize').innerHTML = '';
+    });
+</script>
 </body>
 </html>
