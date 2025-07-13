@@ -24,7 +24,7 @@ function calculate() {
         var distance = holeSize + mn;
 
         document.getElementById('distance').innerHTML = 'Відстань між центрами: ' + distance;
-        document.getElementById('holeSize').innerHTML = 'Діметр отвору: ' + holeSize;
+        document.getElementById('holeSize').innerHTML = 'Діаметр отвору: ' + holeSize;
     } catch(err) {
         document.getElementById('distance').innerHTML = '';
         document.getElementById('holeSize').innerHTML = '';
