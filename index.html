@@ -3,17 +3,48 @@
 <head>
     <meta charset="utf-8">
     <title>Розрахунок відстані між центрами</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<div class="container">
-    <h2>Розрахунок відстані між центрами</h2>
-    <input type="number" id="val1" placeholder="Введіть перше значення">
-    <input type="number" id="val2" placeholder="Введіть друге значення">
-    <div class="distance" id="distance"></div>
-    <div class="holeSize" id="holeSize"></div>
-    <button id="reset">Reset</button>
+<div class="main-container">
+    <div class="form-container">
+        <h2>Розрахунок відстані між центрами</h2>
+        <input type="number" id="val1" placeholder="Введіть перше значення">
+        <input type="number" id="val2" placeholder="Введіть друге значення">
+        <div class="distance" id="distance"></div>
+        <div class="holeSize" id="holeSize"></div>
+        <br/>
+        <button id="reset">Reset</button>
+    </div>
+
+    <div class="manual-container">
+        <h3>Інструкція користування</h3>
+
+        <div class="manual-text">
+            Крок 1: Штангенциркулем виміряйте відстані між найближчими і найдальшими стінками отворів.
+        </div>
+        <img src="media/manual1.png" alt="Схема 1" class="manual-image">
+        <div class="manual-text notes">
+            <strong>Примітка:</strong> Ставте штангенциркуль в отвори перпендикулярно. Для дальніх стінок шукайте
+            максимальне значення, для ближніх - мінімальне. Але не тисність занадто сильно, щоб не отримати не коректні
+            значення.
+        </div>
+
+        <hr/>
+
+        <div class="manual-text">
+            Крок 2: Введіть значення у поля форми. Калькулятор автоматично розрахує відстань між центрами отворів та
+            діаметр проміжного отвору.
+            Результати відображатимуться під полями вводу.
+        </div>
+        <img src="media/manual2.png" alt="Схема 2" class="manual-image">
+
+        <div class="manual-text notes">
+            <strong>Примітка:</strong> Введіть числові значення у міліметрах. Калькулятор працює з додатнми та
+            відʼємними числами в будь якому порядку.
+        </div>
+    </div>
 </div>
-<script src="script.js"></script>
+<script src="script/script.js"></script>
 </body>
 </html>

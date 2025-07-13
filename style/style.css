@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c9e4e8;
+    margin: 0;
+    padding: 20px;
+}
+
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.form-container {
+    flex: 0 0 auto;
+    width: 400px;
+    background: #fffdeb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.manual-container {
+    flex: 1;
+    max-width: 500px;
+    background: #fffdeb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.manual-container h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.manual-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.manual-text {
+    margin: 15px 0;
+    line-height: 1.5;
+    color: #555;
+}
+
+.notes {
+    background-color: wheat;
+    padding: 10px;
+}
+
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.distance, .holeSize {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
