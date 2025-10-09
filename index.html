@@ -11,14 +11,39 @@
 </head>
 <body>
 <div class="main-container">
-    <div class="form-container">
-        <h2>Розрахунок відстані між центрами</h2>
-        <input type="number" id="val1" placeholder="Введіть перше значення">
-        <input type="number" id="val2" placeholder="Введіть друге значення">
-        <div class="distance" id="distance"></div>
-        <div class="holeSize" id="holeSize"></div>
-        <br/>
-        <button id="reset">Reset</button>
+    <div class="left-column">
+        <div class="form-container">
+            <h2>Розрахунок відстані між центрами</h2>
+            <input type="number" id="val1" placeholder="Введіть перше значення">
+            <input type="number" id="val2" placeholder="Введіть друге значення">
+            <div class="distance" id="distance"></div>
+            <div class="holeSize" id="holeSize"></div>
+            <br/>
+            <button id="save">Зберегти</button>
+            <button id="reset">Скинути</button>
+        </div>
+
+        <div class="results-container">
+            <h3>Збережені результати</h3>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Дата/Час</th>
+                        <th>Val1</th>
+                        <th>Val2</th>
+                        <th>⇔
+                        мм</th>
+                        <th>⌀
+                        мм
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody">
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="manual-container">

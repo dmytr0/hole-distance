@@ -30,9 +30,15 @@ body::before {
     align-items: flex-start;
 }
 
-.form-container {
+.left-column {
     flex: 0 0 auto;
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container {
     background: #fffdeb;
     padding: 20px;
     border-radius: 8px;
@@ -91,4 +97,81 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #000;
+}
+
+button#reset {
+    background-color: #cc0100;
+}
+
+button#reset:hover {
+    background-color: #b40100;
+}
+
+.results-container {
+    background: #fffdeb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.results-container h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+#resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.85em;
+}
+
+#resultsTable th,
+#resultsTable td {
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+#resultsTable th {
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+}
+
+#resultsTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#resultsTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    opacity: 0.7;
 }
