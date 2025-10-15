@@ -18,10 +18,10 @@ function calculate() {
             return;
         }
 
-        var mn = Math.min(a, b);
-        var mx = Math.max(a, b);
-        var holeSize = (mx - mn) / 2;
-        var distance = holeSize + mn;
+        const mn = Math.min(a, b);
+        const mx = Math.max(a, b);
+        const holeSize = roundTo((mx - mn) / 2, 2);
+        const distance = roundTo(holeSize + mn, 2);
 
         document.getElementById('distance').innerHTML = 'Відстань між центрами: ' + distance;
         document.getElementById('holeSize').innerHTML = 'Діаметр отвору: ' + holeSize;
@@ -35,6 +35,12 @@ document.getElementById('val1').addEventListener('input', calculate);
 document.getElementById('val2').addEventListener('input', calculate);
 
 document.getElementById('reset').addEventListener('click', resetForm);
+
+function roundTo(num, roundTo) {
+    roundTo = roundTo ? roundTo : 0;
+    let tmp = 10 ** roundTo;
+    return Math.round(num * tmp) / tmp;
+}
 
 function resetForm() {
     document.getElementById('val1').value = '';
@@ -97,6 +103,13 @@ function deleteResult(index) {
     saveResults(results);
     renderTable();
 }
+
+document.querySelectorAll('.frame-name').forEach(name => {
+    name.addEventListener('click', () => {
+        const block = name.closest('.frame-block');
+        block.classList.toggle('open');
+    });
+});
 
 // Save button handler
 document.getElementById('save').addEventListener('click', function() {

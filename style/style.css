@@ -45,6 +45,106 @@ body::before {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.known-frame-container {
+    flex: 1;
+    max-width: 500px;
+    background: #fffdeb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.frame-block {
+    padding: 5px;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.frame-block h3 {
+    margin: 5px 0;
+}
+
+.frame-block h4 {
+    margin: 5px 0;
+}
+
+.frame-name {
+    cursor: pointer;
+    user-select: none;
+    color: #333;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    padding-left: 10px;
+    border-bottom: 3px solid #c6b590;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.frame-name:hover {
+    background-color: #0063a645;
+}
+
+/* Стрілочка справа */
+.frame-name::after {
+    content: "⌄";
+    font-size: 0.8em;
+}
+
+.frame-block.open .frame-name::after {
+    transform: rotate(180deg);
+}
+
+.frame-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 12px;
+}
+
+.frame-block.open .frame-content {
+    max-height: 500px;
+    padding: 8px 12px;
+}
+
+.position {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.hole-sizes {
+    margin: 0 0 0 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dimension {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: large;
+}
+
+.units {
+    font-family: monospace;
+    font-weight: bold;
+    margin: 3px;
+    letter-spacing: 1px;
+}
+
+.dimensions {
+    margin: 0 0 5px 10px;
+    background: #f5deb366;
+    padding: 0 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+
 .manual-container {
     flex: 1;
     max-width: 500px;
