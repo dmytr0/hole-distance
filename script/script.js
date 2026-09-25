@@ -78,10 +78,10 @@ function renderTable() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${result.dateTime}</td>
-            <td>${result.val1}</td>
-            <td>${result.val2}</td>
-            <td>${result.distance}</td>
+            <td class="result-distance">${result.distance}</td>
             <td>${result.holeSize}</td>
+            <td class="result-input">${result.val1}</td>
+            <td class="result-input">${result.val2}</td>
             <td><button class="delete-btn" data-index="${originalIndex}">🗑️</button></td>
         `;
         tbody.appendChild(row);
